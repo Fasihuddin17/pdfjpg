@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDF to JPG Converter – Free, Private, In Your Browser</title>
+<meta name="description" content="Convert PDF to JPG online for free. Pick pages, choose quality, preview and download as JPG or ZIP. Files are processed in your browser, not uploaded.">
+<link rel="canonical" href="https://YOUR-DOMAIN.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#4f46e5">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF to JPG Converter – Free, Private, In Your Browser">
+<meta property="og:description" content="Convert PDF pages to JPG images locally in your browser. Download single images or a ZIP.">
+<meta property="og:url" content="https://YOUR-DOMAIN.com/">
+<meta property="og:image" content="https://YOUR-DOMAIN.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF to JPG Converter – Free, Private, In Your Browser">
+<meta name="twitter:description" content="Convert PDF pages to JPG images locally in your browser.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"PDF to JPG Converter","url":"https://YOUR-DOMAIN.com/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (modern web browser)","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://YOUR-DOMAIN.com/"},{"@type":"ListItem","position":2,"name":"PDF to JPG Converter","item":"https://YOUR-DOMAIN.com/"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I convert PDF to JPG?","acceptedAnswer":{"@type":"Answer","text":"Choose or drop a PDF, pick the pages, quality and resolution, then press Convert to JPG. Download single images or everything as a ZIP."}},
+{"@type":"Question","name":"Is my PDF uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Conversion runs in your browser. The PDF is not sent to our server. The page only loads its code libraries from a public CDN."}},
+{"@type":"Question","name":"Can I convert only some pages?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose Page range and enter values such as 1-3, 5, 8."}},
+{"@type":"Question","name":"Is the PDF to JPG converter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no account, watermark or page limit imposed by this site. Very large files are limited by your device memory."}}]}
+]}
+</script>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#14162b;--mute:#555a75;--brand:#4f46e5;--brand2:#3730a3;--line:#dcdff0;--ok:#0b7a3e;--err:#b42318;--r:16px}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1020;--card:#181a30;--ink:#eceefb;--mute:#a7abc8;--brand:#818cf8;--brand2:#a5b4fc;--line:#2b2e4d;--ok:#4ade80;--err:#f87171}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--brand)}:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.wrap{max-width:1000px;margin:auto;padding:0 18px}
+header{background:var(--card);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;flex-wrap:wrap;gap:8px}
+.logo{font-weight:800;font-size:1.25rem;color:var(--ink);text-decoration:none}.logo span{color:var(--brand)}
+nav a{margin-left:16px;text-decoration:none;color:var(--mute);font-weight:600}nav a:hover{color:var(--brand)}
+h1{font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.15;margin:28px 0 8px;text-align:center}
+.lead{text-align:center;color:var(--mute);max-width:640px;margin:0 auto 22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;margin-bottom:20px}
+#drop{border:2px dashed var(--brand);border-radius:var(--r);padding:44px 18px;text-align:center;cursor:pointer;transition:background .15s}
+#drop.over,#drop:hover{background:rgba(79,70,229,.08)}
+#drop svg{width:56px;height:56px;color:var(--brand)}
+.btn{display:inline-block;border:0;border-radius:12px;padding:13px 26px;font:700 1rem inherit;font-family:inherit;background:var(--brand);color:#fff;cursor:pointer}
+.btn:hover{background:var(--brand2)}.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.sec{background:transparent;color:var(--brand);border:2px solid var(--brand)}
+[hidden]{display:none!important}
+.hint{color:var(--mute);font-size:.9rem;margin:8px 0 0}
+.info{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px;font-weight:600}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:18px}
+label{display:block;font-weight:600;font-size:.9rem;margin-bottom:4px}
+select,input[type=text]{width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--brand);transition:width .2s}
+.msg{padding:12px;border-radius:10px;margin-top:12px;font-weight:600}.msg.err{color:var(--err);border:1px solid var(--err)}.msg.ok{color:var(--ok);border:1px solid var(--ok)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-top:16px}
+.pg{border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;background:var(--bg)}
+.pg img{width:100%;height:auto;border-radius:6px;background:#fff}.pg small{display:block;color:var(--mute);margin:6px 0}
+.pg a{display:block;padding:8px;border-radius:8px;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.ad{min-height:100px;border:1px dashed var(--line);border-radius:12px;margin:20px 0;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:.75rem;text-align:center}
+.trust{font-size:.9rem;color:var(--mute);text-align:center;margin-top:14px}
+main section{margin:34px 0}h2{font-size:1.5rem;margin:0 0 10px}h3{font-size:1.1rem;margin:16px 0 4px}
+ol,ul{padding-left:22px}details{border-bottom:1px solid var(--line);padding:10px 0}summary{cursor:pointer;font-weight:700}
+footer{background:var(--card);border-top:1px solid var(--line);padding:26px 0;margin-top:40px;color:var(--mute);font-size:.92rem}
+footer a{margin-right:16px}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="./">Page<span>Snap</span> PDF</a>
+<nav aria-label="Main"><a href="#tool">Converter</a><a href="#how">How it works</a><a href="#safe">Privacy</a><a href="#faq">FAQ</a></nav></div></header>
+
+<div class="wrap"><div class="ad" aria-label="Advertisement area">Ad slot 1 (header) — paste AdSense code here</div></div>
+
+<main class="wrap">
+<h1>PDF to JPG Converter</h1>
+<p class="lead">Convert PDF to JPG online for free. Turn every page, or just the pages you pick, into JPG images, then download one by one or as a single ZIP.</p>
+
+<section id="tool" class="card" aria-labelledby="toolh">
+<h2 id="toolh" class="sr">PDF to JPG tool</h2>
+<div id="step1">
+<div id="drop" role="button" tabindex="0" aria-label="Choose a PDF file or drop it here">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M12 17v-6m-3 3 3-3 3 3"/></svg>
+<p><button type="button" class="btn" id="pick">Select PDF file</button></p>
+<p class="hint">or drag and drop a PDF here · max 100 MB</p>
+</div>
+<input type="file" id="file" accept="application/pdf,.pdf" class="sr" aria-label="PDF file">
+</div>
+
+<div id="step2" hidden>
+<div class="info"><span id="fname"></span><button type="button" class="btn sec" id="reset1">Choose another PDF</button></div>
+<div class="opts">
+<div><label for="pages">Pages</label><select id="pages"><option value="all">All pages</option><option value="range">Page range</option></select></div>
+<div id="rw" hidden><label for="range">Range (e.g. 1-3, 5, 8)</label><input type="text" id="range" placeholder="1-3, 5"></div>
+<div><label for="q">JPG quality</label><select id="q"><option value=".75">Standard</option><option value=".9" selected>High</option><option value=".97">Very high</option></select></div>
+<div><label for="sc">Resolution</label><select id="sc"><option value="1.5">Screen (1.5×)</option><option value="2" selected>Sharp (2×)</option><option value="3">Print (3×)</option></select></div>
+</div>
+<button type="button" class="btn" id="go">Convert to JPG</button>
+</div>
+
+<div id="prog" hidden><p id="ptxt" role="status" aria-live="polite">Working…</p><div class="bar"><i id="pbar"></i></div></div>
+<div id="msg" role="alert" hidden></div>
+
+<div id="res" hidden>
+<div class="actions"><button type="button" class="btn" id="zip">Download all as ZIP</button><button type="button" class="btn sec" id="reset2">Start over</button></div>
+<div class="grid" id="grid"></div>
+</div>
+<p class="trust">Your PDF is processed locally in your browser and is not uploaded to our server.</p>
+</section>
+
+<div class="ad" aria-label="Advertisement area">Ad slot 2 (below tool) — paste AdSense code here</div>
+
+<section id="how"><h2>How to Convert PDF to JPG</h2>
+<ol><li><b>Select your PDF.</b> Click the button or drop the file onto the upload area.</li>
+<li><b>Choose pages.</b> Convert all pages or enter a range like 2-6.</li>
+<li><b>Set quality and resolution.</b> High and Sharp suit most uses; pick Print for detailed documents.</li>
+<li><b>Convert and download.</b> Preview each JPG, save individual pages, or download the ZIP.</li></ol></section>
+
+<section id="features"><h2>PDF to JPG Converter Features</h2>
+<ul><li>Converts each PDF page into its own JPG, keeping the page's original orientation and proportions.</li>
+<li>Three JPG quality levels and three resolution levels.</li>
+<li>Page range selection to avoid converting what you don't need.</li>
+<li>Instant previews, per-page download and one-click ZIP (converted-images.zip).</li>
+<li>Works on desktop and mobile browsers; no account or install.</li></ul>
+<p class="hint">Not included: extracting embedded images separately from the page render. This tool renders full pages.</p></section>
+
+<section id="why"><h2>Why Convert PDF to JPG?</h2>
+<p>JPG images are easy to insert into slides, post on social media, attach to forms that reject PDFs, or preview in chat apps. Converting a PDF page to JPG is useful for sharing a single page, making thumbnails, or archiving a flyer as an image.</p>
+<h3>PDF to JPG vs PDF to image</h3>
+<p>"PDF to image" can mean PNG, WebP or JPG. JPG gives small files and works everywhere, which suits photos and mixed pages. PNG is lossless and better for sharp text or line art, but files are larger. Rendered pages are raster images, so text is no longer selectable.</p></section>
+
+<div class="ad" aria-label="Advertisement area">Ad slot 3 (content) — paste AdSense code here</div>
+
+<section id="safe"><h2>Are My PDF Files Safe?</h2>
+<p>The conversion happens in your browser using PDF.js. Your file is read in memory on your device and is not sent to our server. The page loads two code libraries (PDF.js and JSZip) from a public CDN, and your host or CDN may log ordinary request data. No tool can promise absolute security, so avoid using shared computers for confidential files. See the <a href="privacy.html">Privacy Policy</a>.</p></section>
+
+<section id="free"><h2>Is This PDF to JPG Converter Free?</h2>
+<p>Yes. There is no sign-up, watermark or page cap set by this site. Very large PDFs or high resolutions can exceed your device's memory, in which case lower the resolution or convert fewer pages at a time. The site may display ads.</p></section>
+
+<section id="faq"><h2>Frequently Asked Questions</h2>
+<details><summary>How do I convert PDF to JPG?</summary><p>Choose or drop a PDF, pick the pages, quality and resolution, then press Convert to JPG. Download single images or everything as a ZIP.</p></details>
+<details><summary>Is my PDF uploaded to a server?</summary><p>No. Conversion runs in your browser. The PDF is not sent to our server. The page only loads its code libraries from a public CDN.</p></details>
+<details><summary>Can I convert only some pages?</summary><p>Yes. Choose Page range and enter values such as 1-3, 5, 8.</p></details>
+<details><summary>Is the PDF to JPG converter free?</summary><p>Yes. There is no account, watermark or page limit imposed by this site. Very large files are limited by your device memory.</p></details>
+<details><summary>Which quality should I choose?</summary><p>High quality at 2× is a good default. Use Very high and Print for detailed pages; use Standard and Screen for smaller files.</p></details>
+<details><summary>Does it work on mobile?</summary><p>Yes, on current mobile browsers. Large PDFs may be slow on older phones; use a lower resolution or a page range.</p></details>
+<details><summary>Can I convert password-protected PDFs?</summary><p>No. Password-protected files are not supported; remove the password first with software you are authorised to use.</p></details></section>
+
+<section class="card" style="text-align:center"><h2>Ready to convert?</h2><p><a class="btn" href="#tool">Back to the converter</a></p></section>
+<div class="ad" aria-label="Advertisement area">Ad slot 4 (footer, optional) — paste AdSense code here</div>
+</main>
+
+<footer><div class="wrap"><p><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="contact.html">Contact</a></p><p>© <span id="yr">2026</span> PageSnap PDF. PDF is a trademark of Adobe; this site is not affiliated with Adobe.</p></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+<script>
+window.addEventListener('DOMContentLoaded',()=>{
+const $=i=>document.getElementById(i),MAX=100*1024*1024,MAXPX=16e6;
+let pdf=null,base='document',items=[],busy=false;
+const show=(el,v)=>el.hidden=!v;
+function msg(t,type){const m=$('msg');m.textContent=t||'';m.className='msg '+(type||'');show(m,!!t)}
+function clearRes(){items.forEach(i=>URL.revokeObjectURL(i.url));items=[];$('grid').innerHTML='';show($('res'),false)}
+function reset(){if(busy)return;clearRes();if(pdf){pdf.destroy();pdf=null}$('file').value='';msg('');show($('step1'),true);show($('step2'),false);show($('prog'),false)}
+async function load(f){
+ msg('');clearRes();
+ if(!f)return;
+ if(!(f.type==='application/pdf'||/\.pdf$/i.test(f.name)))return msg('That is not a PDF file. Please choose a .pdf file.','err');
+ if(f.size>MAX)return msg('This file is larger than 100 MB. Please use a smaller PDF.','err');
+ if(typeof pdfjsLib==='undefined'||typeof JSZip==='undefined')return msg('Required libraries did not load. Check your connection and reload the page.','err');
+ pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+ try{
+  const buf=await f.arrayBuffer();
+  pdf=await pdfjsLib.getDocument({data:buf}).promise;
+  base=f.name.replace(/\.pdf$/i,'').replace(/[^\w\-]+/g,'_')||'document';
+  $('fname').textContent=f.name+' · '+pdf.numPages+(pdf.numPages===1?' page':' pages');
+  show($('step1'),false);show($('step2'),true);
+ }catch(e){
+  pdf=null;
+  msg(e&&e.name==='PasswordException'?'This PDF is password-protected and cannot be converted.':'This file could not be read. It may be damaged or not a valid PDF.','err');
+ }
+}
+function parse(s,n){
+ const set=new Set();
+ for(const p of s.split(',').map(x=>x.trim()).filter(Boolean)){
+  const m=p.match(/^(\d+)(?:\s*-\s*(\d+))?$/);if(!m)return null;
+  const a=+m[1],b=m[2]?+m[2]:a;if(a<1||b<a||b>n)return null;
+  for(let i=a;i<=b;i++)set.add(i);
+ }
+ return set.size?[...set].sort((x,y)=>x-y):null;
+}
+const toBlob=(c,q)=>new Promise(r=>c.toBlob(r,'image/jpeg',q));
+async function convert(){
+ if(!pdf||busy)return;msg('');clearRes();
+ let list;
+ if($('pages').value==='all')list=Array.from({length:pdf.numPages},(_, i)=>i+1);
+ else{list=parse($('range').value,pdf.numPages);if(!list)return msg('Invalid page range. Use numbers between 1 and '+pdf.numPages+', e.g. 1-3, 5.','err')}
+ busy=true;$('go').disabled=true;show($('prog'),true);
+ const q=+$('q').value,sc=+$('sc').value,pad=String(pdf.numPages).length;
+ try{
+  for(let k=0;k<list.length;k++){
+   const n=list[k];$('ptxt').textContent='Converting page '+n+' ('+(k+1)+' of '+list.length+')…';
+   const page=await pdf.getPage(n);
+   let s=sc,vp=page.getViewport({scale:s});
+   if(vp.width*vp.height>MAXPX){s*=Math.sqrt(MAXPX/(vp.width*vp.height));vp=page.getViewport({scale:s})}
+   const c=document.createElement('canvas');c.width=Math.floor(vp.width);c.height=Math.floor(vp.height);
+   await page.render({canvasContext:c.getContext('2d'),viewport:vp,background:'#ffffff'}).promise;
+   const blob=await toBlob(c,q);c.width=c.height=0;page.cleanup();
+   if(!blob)throw new Error('encode');
+   const name=base+'-page-'+String(n).padStart(pad,'0')+'.jpg',url=URL.createObjectURL(blob);
+   items.push({name,blob,url});
+   const d=document.createElement('div');d.className='pg';
+   const im=new Image();im.src=url;im.alt='Preview of page '+n;im.loading='lazy';
+   const sm=document.createElement('small');sm.textContent='Page '+n+' · '+(blob.size/1024).toFixed(0)+' KB';
+   const a=document.createElement('a');a.href=url;a.download=name;a.textContent='Download JPG';a.setAttribute('aria-label','Download page '+n+' as JPG');
+   d.append(im,sm,a);$('grid').appendChild(d);
+   $('pbar').style.width=((k+1)/list.length*100)+'%';
+  }
+  show($('res'),true);msg('Done! '+items.length+(items.length===1?' page':' pages')+' converted.','ok');
+ }catch(e){msg('Conversion failed. Try a lower resolution or fewer pages.','err')}
+ finally{busy=false;$('go').disabled=false;show($('prog'),false);$('pbar').style.width='0'}
+}
+async function zip(){
+ if(!items.length)return;const b=$('zip');b.disabled=true;b.textContent='Creating ZIP…';
+ try{
+  const z=new JSZip();items.forEach(i=>z.file(i.name,i.blob));
+  const out=await z.generateAsync({type:'blob',compression:'STORE'});
+  const u=URL.createObjectURL(out),a=document.createElement('a');a.href=u;a.download='converted-images.zip';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000);
+ }catch(e){msg('Could not create the ZIP. Download pages individually instead.','err')}
+ b.disabled=false;b.textContent='Download all as ZIP';
+}
+const drop=$('drop'),inp=$('file');
+$('pick').onclick=e=>{e.stopPropagation();inp.click()};
+drop.onclick=()=>inp.click();
+drop.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();inp.click()}};
+inp.onchange=()=>load(inp.files[0]);
+['dragenter','dragover'].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.add('over')}));
+['dragleave','drop'].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.remove('over')}));
+drop.addEventListener('drop',e=>load(e.dataTransfer.files[0]));
+$('pages').onchange=()=>show($('rw'),$('pages').value==='range');
+$('go').onclick=convert;$('zip').onclick=zip;$('reset1').onclick=reset;$('reset2').onclick=reset;
+$('yr').textContent=new Date().getFullYear();
+});
+</script>
+</body>
+</html>
